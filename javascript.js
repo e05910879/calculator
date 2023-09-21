@@ -31,9 +31,15 @@ function addNumberToDisplay(number) {
         display.textContent += number;
     }
 }
+
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
     numberButton.addEventListener('click', () => {
         addNumberToDisplay(numberButton.textContent);
     })
 })
+
+const clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click', () => {
+    display.textContent = '0';
+});
