@@ -20,6 +20,20 @@ let firstNumber, operator, secondNumber;
 
 // Step 3: Completed
 function operate(firstNumber, operator, secondNumber) {
+    switch(operator) {
+        case 'add':
+            display.textContent = add(firstNumber, secondNumber);
+            break;
+        case 'subtract':
+            display.textContent = subtract(firstNumber, secondNumber);
+            break;
+        case 'multiply':
+            display.textContent = multiply(firstNumber, secondNumber);
+            break;
+        case 'divide':
+            display.textContent = divide(firstNumber, secondNumber);
+            break;
+    }
 }
 
 const display = document.querySelector('#display');
