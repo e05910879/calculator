@@ -50,3 +50,9 @@ operatorButtons.forEach((operatorButton) => {
         operator = operatorButton.id;
     });
 })
+
+const equalsButton = document.querySelector('.equals-button');
+equalsButton.addEventListener('click', () => {
+    secondNumber = Number(display.textContent);
+    operate(firstNumber, operator, secondNumber);
+});
