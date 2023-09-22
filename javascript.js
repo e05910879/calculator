@@ -60,6 +60,7 @@ clearButton.addEventListener('click', () => {
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
     operatorButton.addEventListener('click', () => {
+        operatorIsSelected = true;
         firstNumber = Number(display.textContent);
         operator = operatorButton.id;
     });
