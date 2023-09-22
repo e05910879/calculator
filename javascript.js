@@ -71,4 +71,4 @@ equalsButton.addEventListener('click', () => {
     operate(firstNumber, operator, secondNumber);
 });
 
-let operatorSelected = false, equalsSelected = false;
+let operatorIsSelected = false, equalsIsSelected = false;
