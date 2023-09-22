@@ -67,8 +67,11 @@ operatorButtons.forEach((operatorButton) => {
 
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
-    secondNumber = Number(display.textContent);
-    operate(firstNumber, operator, secondNumber);
+    if (operatorIsSelected) {
+        secondNumber = Number(display.textContent);
+        operate(firstNumber, operator, secondNumber);
+        operatorIsSelected = false;
+    }
 });
 
 let operatorIsSelected = false, equalsIsSelected = false;
