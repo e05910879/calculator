@@ -53,12 +53,15 @@ numberButtons.forEach((numberButton) => {
     })
 });
 
-const clearButton = document.querySelector('.clear-button');
-clearButton.addEventListener('click', () => {
+function clearButton() {
     display.textContent = '0';
     userEnteredNumber = false;
-    firstNumber = '';
-    secondNumber = '';
+    firstNumber = null;
+    secondNumber = null;
+}
+const clearButton = document.querySelector('.clear-button');
+clearButton.addEventListener('click', () => {
+    clearButton();
 });
 
 
