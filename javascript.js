@@ -56,6 +56,9 @@ numberButtons.forEach((numberButton) => {
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
     display.textContent = '0';
+    userEnteredNumber = false;
+    firstNumber = '';
+    secondNumber = '';
 });
 
 
