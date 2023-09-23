@@ -23,15 +23,19 @@ function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
         case 'add':
             display.textContent = add(firstNumber, secondNumber);
+            firstNumber = Number(display.textContent);
             break;
         case 'subtract':
             display.textContent = subtract(firstNumber, secondNumber);
+            firstNumber = Number(display.textContent);
             break;
         case 'multiply':
             display.textContent = multiply(firstNumber, secondNumber);
+            firstNumber = Number(display.textContent);
             break;
         case 'divide':
             display.textContent = divide(firstNumber, secondNumber);
+            firstNumber = Number(display.textContent);
             break;
     }
 }
@@ -76,4 +80,46 @@ equalsButton.addEventListener('click', () => {
 });
 
 let operatorIsSelected = false, equalsIsSelected = false;
-let newValueEntered = false;
+let newValueIsEntered = false;
+
+
+/*
+Equals sign and operator sign should be treated as mutually exclusive functions.
+
+Equals sign:
+Equals sign only works if in an 'operator pressed' state. Otherwise, it does nothing.
+If an operator is pressed, the operator function will have already saved the preceding value into firstNumber.
+Then pressing equals will save the display value into second number, and call operate() to perform the corresponding
+operation.
+The resulting sum should then be stored in firstNumber.
+
+Operator sign:
+The calculator starts off with its 'operator-pressed' state turned off.
+
+If the operator button is FIRST pressed, i.e. the operator-pressed state is initially off, 
+the value in the screen must be passed to firstNumber, and the calculator should enter an 'operator pressed' state.
+If already in the 'operator pressed' state no modification of the display value is made, i.e. the 'newValueEntered' state is off, 
+aside from the equals button pressing different operators will merely switch the operator.
+Else if in the 'operator pressed' state the display value were to be modified, pressing the operator button 
+again would act as an equals sign, as well as calling on the operator button again.
+Exception: a + b * c.
+
+// if first time pressing operator button, pass display value to firstNum and turn on operatorIsSelected state
+if (operatorIsSelected === false) {
+    operatorIsSelected = true;
+    firstNumber = display.textContent;
+    newValueEntered = false;
+}
+else {
+    if (newValueEntered === true) {
+        equalsFunction();
+        firstNumber = display.textContent;
+
+    }
+}
+
+
+NOTE: the only buttons that can reset operatorIsSelected state are the equals button or clear button.
+
+
+*/
