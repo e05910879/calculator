@@ -53,7 +53,7 @@ numberButtons.forEach((numberButton) => {
     })
 });
 
-function clearButton() {
+function clearButtonFunction() {
     display.textContent = '0';
     userEnteredNumber = false;
     firstNumber = null;
