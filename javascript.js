@@ -76,3 +76,4 @@ equalsButton.addEventListener('click', () => {
 });
 
 let operatorIsSelected = false, equalsIsSelected = false;
+let newValueEntered = false;
