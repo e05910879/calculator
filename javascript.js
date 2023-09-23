@@ -64,6 +64,13 @@ operatorButtons.forEach((operatorButton) => {
     });
 });
 
+// PRO TIP: If you get confused with implementation, use functions that communicate as much english as possible.
+function equalsFunction() {
+    if (operatorIsSelected && userEnteredNumber) {
+        secondNumber = Number(display.textContent);
+        operate(firstNumber, operator, secondNumber);
+    }
+}
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
         secondNumber = Number(display.textContent);
