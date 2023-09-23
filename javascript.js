@@ -38,9 +38,13 @@ function operate(firstNumber, operator, secondNumber) {
 
 const display = document.querySelector('#display');
 
+let userEnteredNumber = true;
 function numberButtonFunction(number) {
     if (userEnteredNumber) {
-        display.textContent += number;
+        if (display.textContent === '0')
+            display.textContent = number;
+        else
+            display.textContent += number;
     } else {
         display.textContent = number;
         userEnteredNumber = true;
@@ -61,13 +65,18 @@ function clearButtonFunction() {
 }
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
-    clearButton();
+    clearButtonFunction();
 });
 
+function operatorButtonFunction(operatorButton) {
+    //should include userEnteredNumber = false
 
+
+}
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
     operatorButton.addEventListener('click', () => {
+        operatorButtonFunction(operatorButton);
     });
 });
 
