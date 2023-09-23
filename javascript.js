@@ -23,19 +23,15 @@ function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
         case 'add':
             display.textContent = add(firstNumber, secondNumber);
-            firstNumber = Number(display.textContent);
             break;
         case 'subtract':
             display.textContent = subtract(firstNumber, secondNumber);
-            firstNumber = Number(display.textContent);
             break;
         case 'multiply':
             display.textContent = multiply(firstNumber, secondNumber);
-            firstNumber = Number(display.textContent);
             break;
         case 'divide':
             display.textContent = divide(firstNumber, secondNumber);
-            firstNumber = Number(display.textContent);
             break;
     }
 }
@@ -52,14 +48,9 @@ function addNumberToDisplay(number) {
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
     numberButton.addEventListener('click', () => {
-        if (newValueIsEntered === false) {
-            display.textContent = numberButton.textContent;
-            newValueIsEntered = true;
-        } else {
             addNumberToDisplay(numberButton.textContent);
-        }
     })
-})
+});
 
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
@@ -70,32 +61,14 @@ clearButton.addEventListener('click', () => {
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
     operatorButton.addEventListener('click', () => {
-        if (operatorIsSelected === false) {
-            operatorIsSelected = true;
-            firstNumber = Number(display.textContent);
-            operator = operatorButton.id;
-        } else {
-            operator = operatorButton.id;
-            if (newValueIsEntered === true) {
-                secondNumber = Number(display.textContent);
-                operate(firstNumber, operator, secondNumber);
-            }
-        }
-        newValueIsEntered = false;
     });
 });
 
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
-    if (operatorIsSelected) {
         secondNumber = Number(display.textContent);
         operate(firstNumber, operator, secondNumber);
-        // operatorIsSelected = false;
-    }
 });
-
-let operatorIsSelected = false, equalsIsSelected = false;
-let newValueIsEntered = false;
 
 
 /*
