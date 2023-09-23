@@ -52,7 +52,12 @@ function addNumberToDisplay(number) {
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
     numberButton.addEventListener('click', () => {
-        addNumberToDisplay(numberButton.textContent);
+        if (newValueIsEntered === false) {
+            display.textContent = numberButton.textContent;
+            newValueIsEntered = true;
+        } else {
+            addNumberToDisplay(numberButton.textContent);
+        }
     })
 })
 
@@ -61,21 +66,31 @@ clearButton.addEventListener('click', () => {
     display.textContent = '0';
 });
 
+
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
     operatorButton.addEventListener('click', () => {
-        operatorIsSelected = true;
-        firstNumber = Number(display.textContent);
-        operator = operatorButton.id;
+        if (operatorIsSelected === false) {
+            operatorIsSelected = true;
+            firstNumber = Number(display.textContent);
+            operator = operatorButton.id;
+        } else {
+            operator = operatorButton.id;
+            if (newValueIsEntered === true) {
+                secondNumber = Number(display.textContent);
+                operate(firstNumber, operator, secondNumber);
+            }
+        }
+        newValueIsEntered = false;
     });
-})
+});
 
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
     if (operatorIsSelected) {
         secondNumber = Number(display.textContent);
         operate(firstNumber, operator, secondNumber);
-        operatorIsSelected = false;
+        // operatorIsSelected = false;
     }
 });
 
