@@ -38,7 +38,7 @@ function operate(firstNumber, operator, secondNumber) {
 
 const display = document.querySelector('#display');
 
-function addNumberToDisplay(number) {
+function numberButtonFunction(number) {
     if (userEnteredNumber) {
         display.textContent += number;
     } else {
@@ -49,7 +49,7 @@ function addNumberToDisplay(number) {
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
     numberButton.addEventListener('click', () => {
-            addNumberToDisplay(numberButton.textContent);
+            numberButtonFunction(numberButton.textContent);
     })
 });
 
