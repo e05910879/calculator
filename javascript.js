@@ -1,7 +1,8 @@
 let firstNumber = null,
     secondNumber = null,
     operator = null,
-    operatorCurrentlySelected = false;
+    operatorCurrentlySelected = false,
+    newNumberEntered = false;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
@@ -34,6 +35,7 @@ function numberButtonFunction(number) {
     } else {
         display.textContent += number;
     }
+    newNumberEntered = true;
 }
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
