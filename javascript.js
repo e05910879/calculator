@@ -47,6 +47,7 @@ clearButton.addEventListener('click', () => {
 });
 
 function operatorButtonFunction(o) {
+    operatorCurrentlySelected = true;
     firstNumber = display.textContent;
     operator = o;
     console.log(`firstNumber: ${firstNumber}`);
