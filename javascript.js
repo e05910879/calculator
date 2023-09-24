@@ -85,6 +85,7 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 function equalsButtonFunction() {
+    newNumberEntered = false;
     if (operator !== null) {
         if (operatorCurrentlySelected) {
             secondNumber = display.textContent;
