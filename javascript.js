@@ -61,6 +61,24 @@ clearButton.addEventListener('click', () => {
     clearButtonFunction();
 });
 
+function displayEquation() {
+    let op;
+    switch(operator) {
+        case 'add':
+            op = '+';
+            break;
+        case 'subtract':
+            op = '-';
+            break;
+        case 'multiply':
+            op = 'x';
+            break;
+        case 'divide':
+            op = '/';
+            break;
+    }
+    console.log(`${firstNumber} ${op} ${secondNumber} = ${display.textContent}`);
+}
 function operatorButtonFunction(o) {
     operatorCurrentlySelected = true;
     if (operator === null) {
@@ -68,13 +86,11 @@ function operatorButtonFunction(o) {
     } else if (newNumberEntered) {
             secondNumber = display.textContent;
             operate(firstNumber, operator, secondNumber);
+            displayEquation();
             firstNumber = display.textContent;
     }   
     operator = o;
     newNumberEntered = false;
-    console.log(`firstNumber: ${firstNumber}`);
-    console.log(`operator: ${operator}`);
-    console.log(`secondNumber: ${secondNumber}`);
 }
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
