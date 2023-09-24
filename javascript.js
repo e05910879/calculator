@@ -20,12 +20,12 @@ function operate(firstNumber, operator, secondNumber) {
 const display = document.querySelector('#display');
 
 let displayingUserInput = false;
-function numberButtonFunction(numberButton) {
+function numberButtonFunction(number) {
     if (displayingUserInput) {
-        display.textContent += numberButton.textContent;
+        display.textContent += number;
     } else {    // if display is displaying '0'
         if (number !== '0') {
-            display.textContent = numberButton.textContent;
+            display.textContent = number;
             displayingUserInput = true;
         }
     }
@@ -33,7 +33,7 @@ function numberButtonFunction(numberButton) {
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
     numberButton.addEventListener('click', () => {
-            numberButtonFunction(numberButton);
+            numberButtonFunction(numberButton.textContent);
     })
 });
 
