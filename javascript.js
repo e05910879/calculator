@@ -1,5 +1,4 @@
 let firstNumber = null, operator = null, secondNumber = null;
-let displayingUserInput = false;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
@@ -21,14 +20,6 @@ function operate(firstNumber, operator, secondNumber) {
 const display = document.querySelector('#display');
 
 function numberButtonFunction(number) {
-    if (displayingUserInput) {
-        display.textContent += number;
-    } else {    // if display is displaying '0' OR right after operator is pressed
-        if (number !== '0') {
-            display.textContent = number;
-            displayingUserInput = true;
-        }
-    }
 }
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
