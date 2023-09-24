@@ -19,9 +19,9 @@ function operate(firstNumber, operator, secondNumber) {
 
 const display = document.querySelector('#display');
 
-let userEnteredNumber = false;
+let displayingUserInput = false;
 function numberButtonFunction(number) {
-    if (userEnteredNumber) {
+    if (displayingUserInput) {
         // if (display.textContent === '0')
         //     display.textContent = number;
         // else
@@ -30,7 +30,7 @@ function numberButtonFunction(number) {
     } else {
         if (number !== '0') {
             display.textContent = number;
-            userEnteredNumber = true;
+            displayingUserInput = true;
         }
     }
 }
@@ -43,7 +43,7 @@ numberButtons.forEach((numberButton) => {
 
 function clearButtonFunction() {
     display.textContent = '0';
-    userEnteredNumber = false;
+    displayingUserInput = false;
     firstNumber = null;
     secondNumber = null;
 }
@@ -53,7 +53,7 @@ clearButton.addEventListener('click', () => {
 });
 
 function operatorButtonFunction(operatorButton) {
-    //should include userEnteredNumber = false
+    //should include displayingUserInput = false
 
 
 }
@@ -66,7 +66,7 @@ operatorButtons.forEach((operatorButton) => {
 
 // PRO TIP: If you get confused with implementation, use functions that communicate as much english as possible.
 function equalsFunction() {
-    if (operatorIsSelected && userEnteredNumber) {
+    if (operatorIsSelected && displayingUserInput) {
         secondNumber = Number(display.textContent);
         operate(firstNumber, operator, secondNumber);
     }
