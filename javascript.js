@@ -49,9 +49,7 @@ clearButton.addEventListener('click', () => {
     clearButtonFunction();
 });
 
-function operatorButtonFunction(o) {
-    operator = o;
-    console.log(`operator = ${operator}`);
+function operatorButtonFunction() {
 }
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
