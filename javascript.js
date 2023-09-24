@@ -50,6 +50,12 @@ numberButtons.forEach((numberButton) => {
 
 function clearButtonFunction() {
     display.textContent = '0';
+    firstNumber = null,
+    secondNumber = null,
+    operator = null,
+    operatorCurrentlySelected = false,
+    newNumberEntered = false,
+    equalsPressedOnce = false;
 }
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
