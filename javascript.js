@@ -30,13 +30,14 @@ function numberButtonFunction(number) {
         } else {
             display.textContent += number;
         }
-    }
-    else if (display.textContent === '0') {
-        if (number !== '0') {
-            display.textContent = number;
-        }
     } else {
-        display.textContent += number;
+        if (display.textContent === '0') {
+            if (number !== '0') {
+                display.textContent = number;
+            }
+        } else {
+            display.textContent += number;
+        }
     }
     newNumberEntered = true;
 }
