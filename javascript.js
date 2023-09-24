@@ -56,12 +56,13 @@ function operatorButtonFunction(o) {
     operatorCurrentlySelected = true;
     if (operator === null) {
         firstNumber = display.textContent;
-    } else {
-        secondNumber = display.textContent;
-        operate(firstNumber, operator, secondNumber);
-        firstNumber = display.textContent;
-    }
+    } else if (newNumberEntered) {
+            secondNumber = display.textContent;
+            operate(firstNumber, operator, secondNumber);
+            firstNumber = display.textContent;
+    }   
     operator = o;
+    newNumberEntered = false;
     console.log(`firstNumber: ${firstNumber}`);
     console.log(`operator: ${operator}`);
     console.log(`secondNumber: ${secondNumber}`);
