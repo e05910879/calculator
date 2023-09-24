@@ -19,16 +19,19 @@ function operate(firstNumber, operator, secondNumber) {
 
 const display = document.querySelector('#display');
 
-let userEnteredNumber = true;
+let userEnteredNumber = false;
 function numberButtonFunction(number) {
     if (userEnteredNumber) {
-        if (display.textContent === '0')
-            display.textContent = number;
-        else
-            display.textContent += number;
+        // if (display.textContent === '0')
+        //     display.textContent = number;
+        // else
+        //     display.textContent += number;
+        display.textContent += number;
     } else {
-        display.textContent = number;
-        userEnteredNumber = true;
+        if (number !== '0') {
+            display.textContent = number;
+            userEnteredNumber = true;
+        }
     }
 }
 const numberButtons = document.querySelectorAll('.number-button');
