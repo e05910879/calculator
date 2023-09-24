@@ -2,8 +2,7 @@ let firstNumber = null,
     secondNumber = null,
     operator = null,
     operatorCurrentlySelected = false,
-    newNumberEntered = false,
-    equalsPressedOnce = false;
+    newNumberEntered = false;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
