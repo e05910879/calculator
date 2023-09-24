@@ -105,9 +105,10 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 function equalsButtonFunction() {
-    newNumberEntered = false;
+    newNumberEntered = false;          // setting newNumberEntered to false prevents operators entered right after from doing anything
     if (operator !== null) {
-        if (operatorCurrentlySelected) {
+        // if (operatorCurrentlySelected) {
+        if (secondNumber === null) {
             secondNumber = display.textContent;
         }
         operate(firstNumber, operator, secondNumber);
@@ -115,7 +116,6 @@ function equalsButtonFunction() {
         firstNumber = display.textContent;
     }
     operatorCurrentlySelected = false;
-
 }
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
