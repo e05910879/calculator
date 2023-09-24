@@ -79,12 +79,18 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 function equalsButtonFunction() {
-    operatorCurrentlySelected = true;
     if (operator !== null) {
-        secondNumber = display.textContent;
-        operate(firstNumber, operator, secondNumber);
-        firstNumber
+        if (operatorCurrentlySelected) {
+            secondNumber = display.textContent;
+            operate(firstNumber, operator, secondNumber);
+            firstNumber = display.textContent;
+        } else {
+            operate(firstNumber, operator, secondNumber);
+            firstNumber = display.textContent;
+        }
     }
+    operatorCurrentlySelected = false;
+
 }
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
