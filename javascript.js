@@ -2,9 +2,8 @@ let firstNumber = null,
     secondNumber = null,
     operator = null,
     operatorCurrentlySelected = false,
-    newNumberEntered = false,
-    equalsCurrentlySelected = false;
-
+    newNumberEntered = false;
+    
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
         case 'add':
@@ -107,8 +106,7 @@ operatorButtons.forEach((operatorButton) => {
 function equalsButtonFunction() {
     newNumberEntered = false;          // setting newNumberEntered to false prevents operators entered right after from doing anything
     if (operator !== null) {
-        // if (operatorCurrentlySelected) {
-        if (secondNumber === null) {
+        if (operatorCurrentlySelected) {
             secondNumber = display.textContent;
         }
         operate(firstNumber, operator, secondNumber);
