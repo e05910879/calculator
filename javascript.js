@@ -75,6 +75,12 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 function equalsButtonFunction() {
+    operatorCurrentlySelected = true;
+    if (operator !== null) {
+        secondNumber = display.textContent;
+        operate(firstNumber, operator, secondNumber);
+        firstNumber
+    }
 }
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
