@@ -22,6 +22,13 @@ function operate(firstNumber, operator, secondNumber) {
 const display = document.querySelector('#display');
 
 function numberButtonFunction(number) {
+    if (display.textContent === '0') {
+        if (number !== '0') {
+            display.textContent = number;
+        }
+    } else {
+        display.textContent += number;
+    }
 }
 const numberButtons = document.querySelectorAll('.number-button');
 numberButtons.forEach((numberButton) => {
