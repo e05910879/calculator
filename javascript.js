@@ -64,6 +64,7 @@ function equalsButtonFunction() {
     if (operator !== null && displayingUserInput) {
         secondNumber = Number(display.textContent);
         operate(firstNumber, operator, secondNumber);
+        console.log(`${firstNumber} ${operator} ${secondNumber} = ${display.textContent}`);
     }
 }
 const equalsButton = document.querySelector('.equals-button');
