@@ -1,4 +1,4 @@
-let firstNumber, operator, secondNumber;
+let firstNumber = null, operator = null, secondNumber = null;
 let displayingUserInput = false;
 
 function operate(firstNumber, operator, secondNumber) {
@@ -42,6 +42,7 @@ function clearButtonFunction() {
     displayingUserInput = false;
     firstNumber = null;
     secondNumber = null;
+    operator = null;
 }
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
