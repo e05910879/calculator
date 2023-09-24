@@ -38,6 +38,7 @@ numberButtons.forEach((numberButton) => {
 });
 
 function clearButtonFunction() {
+    display.textContent = '0';
 }
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
