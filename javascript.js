@@ -119,3 +119,20 @@ const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
         equalsButtonFunction();
 });
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('mousedown', () => {
+        button.classList.add('click');
+    });
+    button.addEventListener('mouseup', () => {
+        button.classList.remove('click');
+    });
+    button.addEventListener('mouseenter', () => {
+        button.classList.add('hover');
+    });
+    button.addEventListener('mouseleave', () => {
+        button.classList.remove('hover');
+    });
+});
