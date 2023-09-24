@@ -1,4 +1,6 @@
-let firstNumber = null, operator = null, secondNumber = null;
+let firstNumber = null,
+    secondNumber = null,
+    operator = null;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
@@ -29,11 +31,6 @@ numberButtons.forEach((numberButton) => {
 });
 
 function clearButtonFunction() {
-    display.textContent = '0';
-    displayingUserInput = false;
-    firstNumber = null;
-    secondNumber = null;
-    operator = null;
 }
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
@@ -49,18 +46,9 @@ operatorButtons.forEach((operatorButton) => {
     });
 });
 
-// PRO TIP: If you get confused with implementation, use functions that communicate as much english as possible.
 function equalsButtonFunction() {
-    if (operator !== null && displayingUserInput) {
-        secondNumber = Number(display.textContent);
-        operate(firstNumber, operator, secondNumber);
-        console.log(`${firstNumber} ${operator} ${secondNumber} = ${display.textContent}`);
-    }
 }
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
         equalsButtonFunction();
 });
-
-
-// Work on a function that prints to console the equation
