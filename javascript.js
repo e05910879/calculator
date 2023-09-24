@@ -52,10 +52,17 @@ clearButton.addEventListener('click', () => {
 
 function operatorButtonFunction(o) {
     operatorCurrentlySelected = true;
-    firstNumber = display.textContent;
+    if (operator === null) {
+        firstNumber = display.textContent;
+    } else {
+        secondNumber = display.textContent;
+        operate(firstNumber, operator, secondNumber);
+        firstNumber = display.textContent;
+    }
     operator = o;
     console.log(`firstNumber: ${firstNumber}`);
     console.log(`operator: ${operator}`);
+    console.log(`secondNumber: ${secondNumber}`);
 }
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
