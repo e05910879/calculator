@@ -1,22 +1,51 @@
-.row {
+#calculator {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
 
-#buttons {
+.row, #buttons {
     display: flex;
 }
 
 #perimeter {
-    width: 300px;
-    height: 300px;
-}
-
-.clear-button {
-    display: flex;
-    flex: 1;
-    justify-content: center;
+    width: 800px;
+    height: 600px;
+    border: solid black;
+    border-radius: 15px;
 }
 
 #display, button {
     font-size: 32px;
+    margin: 8px;
+}
+
+#display {
+    border: solid black;
+    border-radius: 15px;
+    text-align: right;
+}
+
+button {
+    border: 2px solid darkgray;
+    box-shadow: none;
+    background-color: lightgray;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+#zero {
+    width: 176px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+#clear-button {
+    width: 160px;
+}
+
+#buttons {
+    justify-content: center;;
 }

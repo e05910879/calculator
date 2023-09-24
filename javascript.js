@@ -3,7 +3,7 @@ let firstNumber = null,
     operator = null,
     operatorCurrentlySelected = false,
     newNumberEntered = false;
-    
+
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
         case 'add':
@@ -57,7 +57,7 @@ function clearButtonFunction() {
     operatorCurrentlySelected = false,
     newNumberEntered = false;
 }
-const clearButton = document.querySelector('.clear-button');
+const clearButton = document.querySelector('#clear-button');
 clearButton.addEventListener('click', () => {
     clearButtonFunction();
 });
