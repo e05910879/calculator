@@ -23,7 +23,11 @@ function operate(firstNumber, operator, secondNumber) {
 const display = document.querySelector('#display');
 
 function numberButtonFunction(number) {
-    if (display.textContent === '0') {
+    if (operatorCurrentlySelected) {
+        display.textContent = number;
+        operatorCurrentlySelected = false;
+    }
+    else if (display.textContent === '0') {
         if (number !== '0') {
             display.textContent = number;
         }
