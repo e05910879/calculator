@@ -49,8 +49,8 @@ clearButton.addEventListener('click', () => {
     clearButtonFunction();
 });
 
-function operatorButtonFunction(operator) {
-
+function operatorButtonFunction(o) {
+    operator = o;
 }
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
@@ -69,8 +69,7 @@ function equalsButtonFunction() {
 }
 const equalsButton = document.querySelector('.equals-button');
 equalsButton.addEventListener('click', () => {
-        secondNumber = Number(display.textContent);
-        operate(firstNumber, operator, secondNumber);
+        equalsButtonFunction();
 });
 
 
