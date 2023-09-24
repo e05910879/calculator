@@ -53,9 +53,9 @@ function clearButtonFunction() {
     secondNumber = null,
     operator = null,
     operatorCurrentlySelected = false,
-    newNumberEntered = false,
-    equalsPressedOnce = false;
+    newNumberEntered = false;
 }
+
 const clearButton = document.querySelector('.clear-button');
 clearButton.addEventListener('click', () => {
     clearButtonFunction();
