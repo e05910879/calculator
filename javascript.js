@@ -1,6 +1,7 @@
 let firstNumber = null,
     secondNumber = null,
-    operator = null;
+    operator = null,
+    operatorCurrentlySelected = false;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
@@ -48,6 +49,8 @@ clearButton.addEventListener('click', () => {
 function operatorButtonFunction(o) {
     firstNumber = display.textContent;
     operator = o;
+    console.log(`firstNumber: ${firstNumber}`);
+    console.log(`operator: ${operator}`);
 }
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
