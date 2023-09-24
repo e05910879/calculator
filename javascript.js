@@ -1,37 +1,18 @@
-// Step 1: Completed
-function add(num1, num2) {
-    return Number(num1) + Number(num2);
-}
-
-function subtract(num1, num2) {
-    return Number(num1) - Number(num2);
-}
-
-function multiply(num1, num2) {
-    return Number(num1) * Number(num2);
-}
-
-function divide(num1, num2) {
-    return Number(num1) / Number(num2);
-}
-
-// Step 2: Completed
 let firstNumber, operator, secondNumber;
 
-// Step 3: Completed
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
         case 'add':
-            display.textContent = add(firstNumber, secondNumber);
+            display.textContent = Number(firstNumber) + Number(secondNumber);
             break;
         case 'subtract':
-            display.textContent = subtract(firstNumber, secondNumber);
+            display.textContent = Number(firstNumber) - Number(secondNumber);
             break;
         case 'multiply':
-            display.textContent = multiply(firstNumber, secondNumber);
+            display.textContent = Number(firstNumber) * Number(secondNumber);
             break;
         case 'divide':
-            display.textContent = divide(firstNumber, secondNumber);
+            display.textContent = Number(firstNumber) / Number(secondNumber);
             break;
     }
 }
