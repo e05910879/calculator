@@ -45,7 +45,9 @@ clearButton.addEventListener('click', () => {
     clearButtonFunction();
 });
 
-function operatorButtonFunction() {
+function operatorButtonFunction(o) {
+    firstNumber = display.textContent;
+    operator = o;
 }
 const operatorButtons = document.querySelectorAll('.operator-button');
 operatorButtons.forEach((operatorButton) => {
