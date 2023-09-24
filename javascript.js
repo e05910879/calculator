@@ -104,12 +104,10 @@ function equalsButtonFunction() {
     if (operator !== null) {
         if (operatorCurrentlySelected) {
             secondNumber = display.textContent;
-            operate(firstNumber, operator, secondNumber);
-            firstNumber = display.textContent;
-        } else {
-            operate(firstNumber, operator, secondNumber);
-            firstNumber = display.textContent;
         }
+        operate(firstNumber, operator, secondNumber);
+        displayEquation();
+        firstNumber = display.textContent;
     }
     operatorCurrentlySelected = false;
 
