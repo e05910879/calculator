@@ -1,0 +1,23 @@
+#buttons {
+    display: flex;
+}
+
+#perimeter {
+    width: 300px;
+    height: 300px;
+}
+
+.number-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-container {
+    display: flex;
+    flex: 1;
+}
+
+.right-container {
+    display: flex;
+    flex: 2;
+}
