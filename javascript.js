@@ -3,7 +3,7 @@ let firstNumber = null,
     operator = null,
     operatorCurrentlySelected = false,
     newNumberEntered = false,
-    multipleEquals = false;
+    equalsPressedOnce = false;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
@@ -26,8 +26,11 @@ const display = document.querySelector('#display');
 
 function numberButtonFunction(number) {
     if (operatorCurrentlySelected) {
-        display.textContent = number;
-        operatorCurrentlySelected = false;
+        if (firstNumber === display.textContent) {
+            display.textContent = number;
+        } else {
+            display.textContent += number;
+        }
     }
     else if (display.textContent === '0') {
         if (number !== '0') {
