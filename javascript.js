@@ -3,7 +3,7 @@ let firstNumber = null,
     operator = null,
     operatorCurrentlySelected = false,
     newNumberEntered = false,
-    equalsOperatorBuffer = '', equalsNumberBuffer = '';
+    multipleEquals = false;
 
 function operate(firstNumber, operator, secondNumber) {
     switch(operator) {
