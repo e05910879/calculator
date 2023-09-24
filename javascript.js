@@ -60,8 +60,8 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 // PRO TIP: If you get confused with implementation, use functions that communicate as much english as possible.
-function equalsFunction() {
-    if (operatorIsSelected && displayingUserInput) {
+function equalsButtonFunction() {
+    if (operator !== null && displayingUserInput) {
         secondNumber = Number(display.textContent);
         operate(firstNumber, operator, secondNumber);
     }
@@ -71,3 +71,6 @@ equalsButton.addEventListener('click', () => {
         secondNumber = Number(display.textContent);
         operate(firstNumber, operator, secondNumber);
 });
+
+
+// Work on a function that prints to console the equation
